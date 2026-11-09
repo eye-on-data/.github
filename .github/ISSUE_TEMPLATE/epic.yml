@@ -1,0 +1,31 @@
+name: Epic
+description: An umbrella over sub-issues that carries the scope and the phasing. Requirements live in the sub-issues.
+type: Epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English, about one screen. Link the work as GitHub sub-issues, not as a hand-written list. An epic is not refined itself; its sub-issues pass the Ready gate one by one.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What the epic achieves as a whole, and the phasing in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / not in scope
+      placeholder: |
+        - In: ...
+        - Not in: ...
+    validations:
+      required: true
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Decisions to take
+      description: Open points that are not a sub-issue, with who and by when.
+      placeholder: |
+        - [ ] <open point> (who, by when)

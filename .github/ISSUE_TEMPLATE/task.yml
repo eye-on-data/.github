@@ -1,0 +1,62 @@
+name: Task
+description: One piece of work that is not a feature or a bug - a change, research, a decision, or something we need from someone.
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English, about one screen, nothing invented. The issue starts in **Grooming**; it moves to Todo after `refine-issue` leaves no question (eodagents › knowledge/ai-way-of-working.md › Ready gate).
+  - type: dropdown
+    id: ends-in
+    attributes:
+      label: Ends in
+      description: What the task ends in sets what the approach and the definition of done hold.
+      options:
+        - a change
+        - findings and a recommendation
+        - a decision
+        - something delivered
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What we want to achieve, or find out, decide or obtain, and why now.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What we know, where the debt or the risk sits, what triggered it, what has already been tried or decided.
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: The approach / where to look / the options / from whom, as fits "Ends in". Code you refer to is a lead, marked "(unverified, checked on <date>)". For the backend part of a feature, write out the contract here before either issue is Todo.
+      placeholder: |
+        ...
+
+        Contract (backend part of a feature):
+        - query or mutation name, input fields with types and nullability
+        - result fields
+        - error cases (what is refused, with which error)
+        - what stays the same for callers that do not send the new input
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of done
+      placeholder: |
+        - [ ] <checkable criterion>
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / dependencies
+      description: What could break, what this depends on, migration or downtime. The risk class with its reason. A decision or request also names its deadline as an absolute date and who decides or delivers.
+      placeholder: |
+        ...
+
+        Risk class: <High | Medium | Low>, because <one reason>.

@@ -1,0 +1,65 @@
+name: Bug
+description: Something does not do what it should. Needs reproduction, expected versus actual, environment.
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English, about one screen, nothing invented, no customer data or secrets. The issue starts in **Grooming**; it moves to Todo after `refine-issue` leaves no question (eodagents › knowledge/ai-way-of-working.md › Ready gate). Code you found goes under Pointers, marked unverified.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "One sentence: what is broken. Then the environment: app or portal, staging or production, customer installation (anonymised), browser or app version, absolute date and time, user or role."
+      placeholder: |
+        ...
+
+        Environment: ...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What is the current bug behavior?
+      description: What actually happens. Error message verbatim, without customer data or secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What is the expected correct behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: The reproduction path as Given / When / Then with the expected behaviour, plus the test that reproduces the bug. Then the risk class with its reason, and the impact (who is blocked, how badly, workaround yes or no).
+      placeholder: |
+        - [ ] Given <the state of the steps above>, when <the step that fails today>, then <the expected behaviour>
+        - [ ] A test that reproduces the bug is added and passes
+
+        Risk class: <High | Medium | Low>, because <one reason>. Impact: ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs and/or screenshots
+      description: Logs, request id, screenshots with fictitious or anonymised data.
+  - type: textarea
+    id: pointers
+    attributes:
+      label: Pointers (unverified)
+      description: 'Only what you actually found (a line of code, a config), as leads for the developer, not the fix. Say when you checked. "Ref: HubSpot ticket <Ticket ID>" only on the projectmanagement issue of a support ticket.'
+      placeholder: "`<repo>/<path>` (checked on <date>)"
