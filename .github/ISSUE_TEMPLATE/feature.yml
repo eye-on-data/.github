@@ -1,0 +1,63 @@
+name: Feature
+description: New or extended functionality for a user. Describes a need and its value, not a solution.
+type: Feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English, about one screen, nothing invented. The issue starts in **Grooming**; it moves to Todo after `refine-issue` leaves no question (eodagents › knowledge/ai-way-of-working.md › Ready gate). Behaviour, not implementation: code goes under Pointers, marked unverified.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Who needs this and why (role; customer anonymised unless naming is needed and allowed). What the user does today, and where the time is lost. Then the use cases.
+      placeholder: |
+        ...
+
+        ### Use cases
+
+        - As a <role> I want <what> so that <why>.
+    validations:
+      required: true
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: "Concrete: time saved, errors avoided, number of users, commercial relevance."
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Behaviour the user wants, not the implementation. For a change to a screen, one sentence per screen on what the user sees and clicks, or a screenshot with the change drawn on it. End with what is out of scope.
+      placeholder: |
+        - <behaviour>
+        - <behaviour>
+
+        Screen: ...
+
+        Out of scope (for now): ...
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: One Given / When / Then per requirement, from the user's side, testable on staging without reading code. Include the role that must not see it and the error case where one exists. Then the risk class with its reason (eodagents › knowledge/test-strategy.md › Risk class per ticket).
+      placeholder: |
+        - [ ] Given <state>, when <action>, then <result>
+        - [ ] ...
+
+        Risk class: <High | Medium | Low>, because <one reason>.
+    validations:
+      required: true
+  - type: textarea
+    id: pointers
+    attributes:
+      label: Pointers (unverified)
+      description: Files, components or settings found while writing, as leads for the developer, not the design. Say when you checked.
+      placeholder: "`<repo>/<path>` (checked on <date>)"
+  - type: textarea
+    id: links
+    attributes:
+      label: Links / references / screenshots
+      description: 'Screens, staging links, related issues, the backend sub-issue that carries the contract. "Ref: HubSpot ticket <Ticket ID>" only on the projectmanagement issue of a support ticket.'

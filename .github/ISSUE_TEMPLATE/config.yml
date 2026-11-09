@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support report from a customer
+    url: https://github.com/eye-on-data/projectmanagement/issues/new/choose
+    about: One ticket is one projectmanagement issue (Ref HubSpot ticket). File the product fix as a sub-issue of it.
